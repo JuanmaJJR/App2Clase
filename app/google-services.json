@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1026764823220",
+    "firebase_url": "https://app2clase.firebaseio.com",
+    "project_id": "app2clase",
+    "storage_bucket": "app2clase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1026764823220:android:65d30f090f446f47",
+        "android_client_info": {
+          "package_name": "utad.app2clase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1026764823220-nblg7rjaf2gk2nu2n7p0u2l377hvf61a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "utad.app2clase",
+            "certificate_hash": "671e0071dfff396260e9251adc4e00ac97202931"
+          }
+        },
+        {
+          "client_id": "1026764823220-l77dcthhc95fp073qac5tp9uotibqfmc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpsLxOefhDj5MhkDWFs-62fVAbigKGsPM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1026764823220-l77dcthhc95fp073qac5tp9uotibqfmc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
