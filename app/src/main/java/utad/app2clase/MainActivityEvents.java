@@ -1,11 +1,13 @@
 package utad.app2clase;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.widget.Toast;
 
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuthException;
 
 import utad.app2clase.MainActivity;
 import utad.app2clase.firebase.FirebaseAdminListener;
@@ -85,6 +87,9 @@ public class MainActivityEvents implements LoginFragmentListener, RegisterFragme
                                 Intent intent = new Intent(mainActivity, SecondActivity.class);
                                 mainActivity.startActivity(intent);
                                 mainActivity.finish();
+                            }
+                            else{
+                                System.out.println("NOPE");
                             }
                         }
                     });
