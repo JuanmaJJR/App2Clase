@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1026764823220-j9vv8cg505jed76947ep2icanu4jlnqv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "utad.app2clase",
+            "certificate_hash": "2b6659c88d8c069d05d474956a563e9c2b903115"
+          }
+        },
+        {
           "client_id": "1026764823220-nblg7rjaf2gk2nu2n7p0u2l377hvf61a.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

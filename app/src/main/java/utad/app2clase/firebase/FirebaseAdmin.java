@@ -22,6 +22,7 @@ public class FirebaseAdmin {
     }
 
     public void onCreate() {
+        mAuth = FirebaseAuth.getInstance();
         this.setmAuth(FirebaseAuth.getInstance());
         DataHolder.MyDataHolder.setFirebaseAuth(this.getmAuth());
 
