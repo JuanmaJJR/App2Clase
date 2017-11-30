@@ -5,7 +5,7 @@ import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.view.View;
 
-import com.example.entrega2.firebase.FirebaseAdminListener;
+
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -15,7 +15,7 @@ import com.google.firebase.auth.AuthResult;
 import utad.app2clase.firebase.FirebaseAdminListener;
 
 /**
- * Created by tay on 25/11/17.
+ * Created by Juanma on 25/11/17.
  */
 
 public class SecondActivityEvents implements View.OnClickListener,FirebaseAdminListener {

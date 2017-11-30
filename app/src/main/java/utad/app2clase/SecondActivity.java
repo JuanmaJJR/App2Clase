@@ -21,10 +21,10 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
         firebaseAdmin = new FirebaseAdmin();
-        this.lblBievenida = this.findViewById(R.id.lblBienvenida);
-        this.btnLogOut = this.findViewById(R.id.btnLogOut);
-        this.lblBievenida.setText(R.string.lblBienvenida);
-        this.btnLogOut.setText(R.string.btnLogOut);
+        //this.lblBievenida = this.findViewById(R.id.lblBienvenida);
+        //this.btnLogOut = this.findViewById(R.id.btnLogOut);
+        //this.lblBievenida.setText(R.string.lblBienvenida);
+        //this.btnLogOut.setText(R.string.btnLogOut);
         events = new SecondActivityEvents(this);
         this.btnLogOut.setOnClickListener(events);
 

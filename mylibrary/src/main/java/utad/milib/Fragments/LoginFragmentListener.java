@@ -13,7 +13,8 @@ import utad.mylibrary.R;
 
 
 public interface LoginFragmentListener {
-    public void OnRegisterClicked();
+    public void OnRegisteredClicked();
+
     public void OnLoginClicked();
 }
 

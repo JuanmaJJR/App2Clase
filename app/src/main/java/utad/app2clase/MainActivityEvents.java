@@ -25,7 +25,7 @@ public class MainActivityEvents implements LoginFragmentListener, RegisterFragme
         this.mainActivity = mainActivity;
     }
 
-    @Override
+
     public void OnRegisteredClicked() {
         android.support.v4.app.FragmentTransaction transition = mainActivity.getSupportFragmentManager().beginTransaction();
         transition.hide(this.mainActivity.getLoginFragment());
@@ -34,10 +34,7 @@ public class MainActivityEvents implements LoginFragmentListener, RegisterFragme
 
     }
 
-    @Override
-    public void OnRegisterClicked() {
 
-    }
 
     @Override
     public void OnLoginClicked() {
@@ -45,7 +42,7 @@ public class MainActivityEvents implements LoginFragmentListener, RegisterFragme
 
     }
 
-    @Override
+
     public void OnClickRegistered() {
 
         this.createUserWithEmailAndPassword(this.mainActivity.getRegisterFragment().getTxtEmail().getText().toString(), this.mainActivity.getRegisterFragment().getTxtPass().getText().toString());
@@ -99,13 +96,5 @@ public class MainActivityEvents implements LoginFragmentListener, RegisterFragme
 
     }
 
-    @Override
-    public void OnCancelarClicked() {
 
-    }
-
-    @Override
-    public void OnAceptarClicked() {
-
-    }
 }

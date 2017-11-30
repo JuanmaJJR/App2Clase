@@ -6,9 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
-
-import org.w3c.dom.Text;
+import android.widget.EditText;
 
 import utad.mylibrary.R;
 
@@ -17,30 +15,57 @@ import utad.mylibrary.R;
  * A simple {@link Fragment} subclass.
  */
 public class RegisterFragment extends Fragment {
-    private Button btnAceptar, btnCancelar;
+    private EditText txtEmail, txtPass;
+    private Button btnRegistrar;
+    private RegisterFragmentEvents registerFragmentEvents;
+    private RegisterFragmentListener registerFragmentListener;
 
-    public Button getBtnAceptar() {
-        return btnAceptar;
+
+    public RegisterFragment() {
+        // Required empty public constructor
     }
 
-    public void setBtnAceptar(Button btnAceptar) {
-        this.btnAceptar = btnAceptar;
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View viewRegisterFragment = inflater.inflate(R.layout.fragment_register2, container, false);
+
+        this.registerFragmentEvents = new RegisterFragmentEvents(this);
+        this.txtEmail = viewRegisterFragment.findViewById(R.id.txtEmailRegistro);
+        this.txtPass = viewRegisterFragment.findViewById(R.id.txtPassRegistro);
+        this.btnRegistrar = viewRegisterFragment.findViewById(R.id.btnRegistrar);
+        this.btnRegistrar.setOnClickListener(registerFragmentEvents);
+       // this.btnRegistrar.setText(R.string.btn);
+
+
+        return viewRegisterFragment;
     }
 
-    public Button getBtnCancelar() {
-        return btnCancelar;
+    public EditText getTxtEmail() {
+        return txtEmail;
     }
 
-    public void setBtnCancelar(Button btnCancelar) {
-        this.btnCancelar = btnCancelar;
+    public void setTxtEmail(EditText txtEmail) {
+        this.txtEmail = txtEmail;
     }
 
-    public RegisterFragmentListener getRegisterFragmentListener() {
-        return registerFragmentListener;
+
+    public EditText getTxtPass() {
+        return txtPass;
     }
 
-    public void setRegisterFragmentListener(RegisterFragmentListener registerFragmentListener) {
-        this.registerFragmentListener = registerFragmentListener;
+    public void setTxtPass(EditText txtPass) {
+        this.txtPass = txtPass;
+    }
+
+
+    public Button getBtnRegistrar() {
+        return btnRegistrar;
+    }
+
+    public void setBtnRegistrar(Button btnRegistrar) {
+        this.btnRegistrar = btnRegistrar;
     }
 
     public RegisterFragmentEvents getRegisterFragmentEvents() {
@@ -51,50 +76,39 @@ public class RegisterFragment extends Fragment {
         this.registerFragmentEvents = registerFragmentEvents;
     }
 
-    RegisterFragmentListener registerFragmentListener;
-    RegisterFragmentEvents registerFragmentEvents;
-
-    public RegisterFragment() {
-        // Required empty public constructor
+    public RegisterFragmentListener getRegisterFragmentListener() {
+        return registerFragmentListener;
     }
 
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_register2, container, false);
-        this.setListener(registerFragmentListener);
-        registerFragmentEvents = new RegisterFragmentEvents(this);
-
-        btnCancelar=v.findViewById(R.id.btnCancelar);
-        btnCancelar.setOnClickListener(registerFragmentEvents);
-
-        btnAceptar=v.findViewById(R.id.btnAceptar);
-        btnAceptar.setOnClickListener(registerFragmentEvents);
-
-        return v;
-    }
-    public void setListener( RegisterFragmentListener registerFragmentListener) {
+    public void setRegisterFragmentListener(RegisterFragmentListener registerFragmentListener) {
         this.registerFragmentListener = registerFragmentListener;
     }
 
 }
-class RegisterFragmentEvents implements View.OnClickListener {
-    RegisterFragment registerFragment;
+class RegisterFragmentEvents implements View.OnClickListener{
+
+
+    private RegisterFragment registerFragment;
 
     public RegisterFragmentEvents(RegisterFragment registerFragment) {
         this.registerFragment = registerFragment;
     }
 
     @Override
-    public void onClick(View v) {
-        if (v.getId() == R.id.btnCancelar) {
-            if (this.registerFragment.registerFragmentListener != null) ;
-            this.registerFragment.registerFragmentListener.OnCancelarClicked();
-        } else if (v.getId() == R.id.btnAceptar) {
-            if (this.registerFragment.registerFragmentListener != null) ;
-            this.registerFragment.registerFragmentListener.OnAceptarClicked();
+    public void onClick(View view) {
+        if(this.registerFragment.getRegisterFragmentListener()!=null){
+            this.registerFragment.getRegisterFragmentListener().OnClickRegistered();
         }
+
     }
+
+    public RegisterFragment getRegisterFragment() {
+        return registerFragment;
+    }
+
+    public void setRegisterFragment(RegisterFragment registerFragment) {
+        this.registerFragment = registerFragment;
+    }
+
+
 }
