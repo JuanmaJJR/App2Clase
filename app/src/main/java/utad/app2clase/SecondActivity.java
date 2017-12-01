@@ -1,7 +1,9 @@
 package utad.app2clase;
 
+import android.nfc.Tag;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -27,6 +29,7 @@ public class SecondActivity extends AppCompatActivity {
         //this.btnLogOut.setText(R.string.btnLogOut);
         events = new SecondActivityEvents(this);
         this.btnLogOut.setOnClickListener(events);
+        Log.v("usuario",firebaseAdmin.getmAuth().getCurrentUser().getEmail().toString());
 
     }
 
