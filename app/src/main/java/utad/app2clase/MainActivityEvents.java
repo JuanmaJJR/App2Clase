@@ -22,6 +22,7 @@ public class MainActivityEvents implements LoginFragmentListener, RegisterFragme
 
 
     private MainActivity mainActivity;
+    private SecondActivity secondActivity;
 
     public MainActivityEvents(MainActivity mainActivity) {
         this.mainActivity = mainActivity;
@@ -77,6 +78,10 @@ public class MainActivityEvents implements LoginFragmentListener, RegisterFragme
             // Already signed in
             // Do nothing
             System.out.println("    ESTOY LOGUEADO!!!!!!!!!");
+            secondActivity = new SecondActivity();
+            Intent intent = new Intent(mainActivity, SecondActivity.class);
+            mainActivity.startActivity(intent);
+            mainActivity.finish();
         } else {
             this.mainActivity.getFirebaseAdmin().getmAuth().signInWithEmailAndPassword(emailAddress, password)
                     .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -84,12 +89,13 @@ public class MainActivityEvents implements LoginFragmentListener, RegisterFragme
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             System.out.println("ACABO DE LOGUEARME!!!!!!!!");
                             if (task.isSuccessful()) {
+                                System.out.println("LOGUEADO CORRECTO");
                                 Intent intent = new Intent(mainActivity, SecondActivity.class);
                                 mainActivity.startActivity(intent);
                                 mainActivity.finish();
                             }
                             else{
-                                System.out.println("NOPE");
+                                System.out.println("NOPE "+task.getResult());
                             }
                         }
                     });
@@ -98,6 +104,8 @@ public class MainActivityEvents implements LoginFragmentListener, RegisterFragme
 
     @Override
     public void logOut() {
+
+
 
     }
 
